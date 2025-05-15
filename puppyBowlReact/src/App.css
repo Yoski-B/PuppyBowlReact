@@ -1,0 +1,30 @@
+nav{
+  display:flex;
+  justify-content: space-around;
+  background-color: teal;
+  padding: .5rem;
+}
+
+nav a {
+   color:aliceblue;
+   padding: .5rem;
+}
+
+.playersContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.playersContainer > .player {
+  width: 250px;
+  height: 250px;
+  margin: 20 rem;
+  padding: 20 rem;
+  border: 2px solid black;
+  justify-content: center;
+}
+
+.player > img {
+    width: 100px;
+    height: 100px;
+}
