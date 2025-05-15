@@ -10,7 +10,7 @@ import axios from 'axios';
 
 function App() {
    const [ players , setAllPlayers ] = useState([])
-	//const [ setNewPlayers ] = useState ([])
+	const [ searchResults, setSearchResults ] = useState ([])
 	//const [ singlePlayers, setSinglePlayers ] = useState ([])
 
    useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
          <NavBar />
 			<h1>Welcome to the Puppy Bowl</h1>
 		<Routes>
-        <Route path="/all" element ={<AllPlayers players={players} setAllPlayers={setAllPlayers}/>}/>
+        <Route path="/all" element ={<AllPlayers players={players} setAllPlayers={setAllPlayers} searchResults={searchResults} setSearchResults={setSearchResults}/>}/>
         <Route path="/all/add" element ={<NewPlayerForm setAllPlayers={setAllPlayers} players={players}/>}/>
         <Route path="/all/:id" element ={<SinglePlayer players = {players}/>}/>
       </Routes>
