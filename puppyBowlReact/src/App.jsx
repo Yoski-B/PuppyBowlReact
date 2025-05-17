@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import NewPlayerForm from "./components/NewPlayerForm";
 import SinglePlayer from "./components/SinglePlayer";
 import axios from 'axios';
+import SearchResults from "./components/SearchResults";
 
 
 function App() {
@@ -33,9 +34,10 @@ function App() {
 			<h1>Welcome to the Puppy Bowl</h1>
 		<Routes>
         <Route path="/all" element ={<AllPlayers players={players} setAllPlayers={setAllPlayers} searchResults={searchResults} setSearchResults={setSearchResults}/>}/>
-        <Route path="/all/add" element ={<NewPlayerForm setAllPlayers={setAllPlayers} players={players}/>}/>
-        <Route path="/all/:id" element ={<SinglePlayer players = {players}/>}/>
-      </Routes>
+        <Route path="/all/add" element ={<NewPlayerForm setAllPlayers={setAllPlayers} players={players} />}/>
+        <Route path="/all/:id" element ={<SinglePlayer players = {players} searchResults={searchResults} setSearchResults={setSearchResults}/>}/>
+		  <Route path ="/all/search/?" element={<SearchResults players={players}/>}/>
+		</Routes>
       </div>
    )
 }

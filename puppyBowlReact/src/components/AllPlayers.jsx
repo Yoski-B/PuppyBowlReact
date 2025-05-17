@@ -4,7 +4,7 @@ import axios from "axios"
 import searchForPlayers from "./SearchResults"
 
 
-const AllPlayers= ({players, setAllPlayers, /*setSearchResults*/}) =>{
+const AllPlayers= ({players, setAllPlayers}) =>{
  
   const deletePlayer = async (id) =>{
     try {
@@ -28,21 +28,21 @@ const AllPlayers= ({players, setAllPlayers, /*setSearchResults*/}) =>{
       </form>
       
       <div className="playersContainer">
-        {
-           players.map((player)=>{ 
-            return (
-              <div key={player.id} className= "player">
-                  <Link to={`/all/${player.id}`}>
-                  <h3>{player.name}</h3>
-                  </Link>
-                  <img src ={player.image ? player.image : null} alt={player.name}/>
-                  <br/>
-                  <button onClick={() => deletePlayer(player.id)}>Delete</button>
-               </div>
-             )
-          })
-
-        }
+  {  
+        
+    players.map((player)=>{ 
+      return (
+        <div key={player.id} className= "player">
+            <Link to={`/all/${player.id}`}>
+            <h3>{player.name}</h3>
+            </Link>
+            <img src ={player.image ? player.image : null} alt={player.name}/>
+            <br/>
+            <button onClick={() => deletePlayer(player.id)}>Delete</button>
+         </div>
+       )
+    })
+} 
      </div>
     </div>
  )
